@@ -1,0 +1,352 @@
+
+
+<!--
+    The main HTML file that shows in the backgound of the "Smart-Mirror".
+    It makes use of a speech recognition licensed by MIT, more about that below.
+-->
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Our Code World">
+
+    <title>Smart Mirror</title>
+
+
+    <!--WebSite for speech Recognition : https://sdkcarlos.github.io/sites/artyom.html
+    -->
+    <script src="artyom.min.js"></script>
+</head>
+
+<body bgcolor="#000000">
+    </br>
+
+    <style type="text/css">
+            body {
+            overflow: hidden;
+    </style>
+
+    <div id="clock" style="position:absolute; top:0px;left:900px;">
+        <h2><a style="text-decoration:none;" href="http://www.zeitverschiebung.net/en/city/4180386"><span style="color:gray;"></span><br /></a></h2>
+        <iframe src="http://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&timezone=America%2FNew_York" width="100%" height="150" frameborder="0" seamless></iframe> <small style="color:gray;">&copy; <a href="http://www.zeitverschiebung.net/en/" style="color: gray;"></a></small> </div>
+
+    </br>
+    <span id="output" style="font-size:20px;color:white;"></span>
+    <br>
+
+    <div id="weather" style="margin-left:0;padding:0; visibility:hidden">
+        <iframe id="forecast_embed" type="text/html" frameborder="0" height="245" width\="100%" src="http://forecast.io/embed/#lat=33.9566&lon=-83.3809&name=Downtown Athens&color=#FFFFFF&text-color=#FFFFFF&font=Georgia&units=uk"> </iframe>
+    </div>
+
+    <div style="text-align:center;">
+        <span id="time" style="font-size:40px;color:white;"></span>
+        <br>
+    </div>
+
+    <!--calendar-->
+    <div id="calendar" style="position:absolute; top: 250px; left: 0px; width: 250px; visibility:hidden">
+        <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showTz=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23000000&amp;src=jeffreykaox%40gmail.com&amp;color=%23000000&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%23000000&amp;ctz=America%2FNew_York" style="border-width:0" width="500" height="530" frameborder="0" scrolling="no"></iframe>
+        </script>
+    </div>
+
+    </script>
+    <div id="news" style="position:absolute; top: 250px; right: 0px; height: 530px; width: 350px; float: right; visibility:hidden">
+        <!-- start feedwind code -->
+        <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="?widget_parameter=%7B%22sources%22%3A%5B%7B%22source%22%3A%22http%3A%2F%2Ffeeds.reuters.com%2Freuters%2FtopNews%22%2C%22type%22%3A%22RSS%22%7D%5D%2C%22name%22%3A%22%22%2C%22width%22%3A0%2C%22height%22%3A0%2C%22height_by_article%22%3A%223%22%2C%22target%22%3A%22_blank%22%2C%22font%22%3A%22Arial%2C%20Helvetica%2C%20sans-serif%22%2C%22title_font_size%22%3A%2216%22%2C%22item_title_font_size%22%3A%2216%22%2C%22item_description_font_size%22%3A%2212%22%2C%22border%22%3A%22on%22%2C%22css_url%22%3A%22%22%2C%22responsive%22%3A%22on%22%2C%22text_direction%22%3A%22left%22%2C%22text_alignment%22%3A%22left%22%2C%22corner%22%3A%22rounded%22%2C%22scroll%22%3A%22off%22%2C%22auto_scroll%22%3A%22on%22%2C%22auto_scroll_direction%22%3A%22up%22%2C%22auto_scroll_step_speed%22%3A%225%22%2C%22auto_scroll_mc_speed%22%3A%2220%22%2C%22sort%22%3A%22new%22%2C%22title%22%3A%22off%22%2C%22title_sentence%22%3A%22%22%2C%22title_link%22%3A%22%22%2C%22title_bgcolor%22%3A%22%23ffffff%22%2C%22title_color%22%3A%22%23505659%22%2C%22title_bgimage%22%3A%22%22%2C%22item_bgcolor%22%3A%22%23000000%22%2C%22item_bgimage%22%3A%22%22%2C%22item_title_length%22%3A%2255%22%2C%22item_title_color%22%3A%22%23ffffff%22%2C%22item_border_bottom%22%3A%22on%22%2C%22item_description%22%3A%22both%22%2C%22item_link%22%3A%22off%22%2C%22item_description_length%22%3A%22100%22%2C%22item_description_color%22%3A%22%23ffffff%22%2C%22item_date%22%3A%22on%22%2C%22item_date_format%22%3A%22%25b%20%25e%2C%20%25Y%20%25k%3A%25M%22%2C%22item_date_timezone%22%3A%22%22%2C%22item_description_style%22%3A%22html%22%2C%22item_thumbnail%22%3A%22crop%22%2C%22item_thumbnail_selection%22%3A%22auto%22%2C%22article_num%22%3A%2215%22%2C%22item_player%22%3A%22youtube%22%2C%22keyword_inc%22%3A%22%22%2C%22keyword_exc%22%3A%22%22%7D"></script>
+        <!-- end feedwind code -->
+    </div>
+
+
+    <div id="stocks" style="margin-left:0;padding:0; position:absolute; width:1300px;  top:800px; visibility:hidden">
+
+        <!-- START Worden Top Gainers and Losers Ticker Widget -->
+        <script src="http://widgets.freestockcharts.com/js/jquery-1.3.1.min.js" type="text/javascript"></script>
+        <script src="http://widgets.freestockcharts.com/script/WBIHorizontalTicker2.js?ver=12334" type="text/javascript"></script>
+        <link href="http://widgets.freestockcharts.com/WidgetServer/WBITickerblue.css" rel="stylesheet" type="text/css" />
+        <script>
+            var gainerTick = new WBIHorizontalTicker('gainers');
+            gainerTick.start();
+            var loserTick = new WBIHorizontalTicker('losers');
+            loserTick.start();
+        </script>
+        <!-- End Scrolling Ticker Widget -->
+        <div>
+
+
+
+            <script>
+                startArtyom()
+                    // Now we add the most important point of the plugin, the commands
+                    // This library is very flexible and now we will see why :
+                    // Every command is a literal object
+                artyom.addCommands([{
+                        description: "Artyom can talk too, lets say something if we say hello",
+                        indexes: ["hello", "hey", "hi"],
+                        action: function(i) {
+                            document.getElementById("time").style.visibility = "visible";
+                            // i = the index of the array of indexes option
+
+                            if (i == 0) {
+                                //You say : "hello"
+                                document.getElementById('time').innerHTML = "Hey, how are you?";
+
+                                artyom.say("Hey how are you?");
+
+                            }
+                        }
+                    },
+
+                    {
+                        description: "looks",
+                        indexes: ["how do I look"],
+                        action: function() {
+                            document.getElementById("calendar").style.visibility = "hidden";
+                            document.getElementById("time").style.visibility = "visible";
+                            document.getElementById('time').innerHTML = "Uh... I've seen better";
+
+                            artyom.say("uhhhh I've seen better");
+
+                        }
+                    }, {
+                        description: "I love you",
+                        indexes: ["I love you"],
+                        action: function() {
+                            document.getElementById("calendar").style.visibility = "hidden";
+                            document.getElementById("time").style.visibility = "visible";
+                            document.getElementById('time').innerHTML = "Je t'aime";
+
+                            artyom.say("je t'aime");
+
+                        }
+                    },
+
+                    {
+                        description: "cocaine",
+                        indexes: ["cocaine", "show me the line", "apple"],
+                        action: function() {
+                            document.getElementById("calendar").style.visibility = "hidden";
+                            document.getElementById("time").style.visibility = "visible";
+                            document.getElementById('time').innerHTML = "Place line here --> =========";
+
+                            artyom.say("Do your cocaine here");
+
+                        }
+                    },
+
+                    {
+                        description: "goodbye",
+                        indexes: ["goodbye", "shut down", "shutdown", "turn off", "hide all"],
+                        action: function() {
+                            document.getElementById("time").style.visibility = "hidden";
+                            document.getElementById("clock").style.visibility = "hidden";
+                            document.getElementById("news").style.visibility = "hidden";
+                            document.getElementById("weather").style.visibility = "hidden";
+                            document.getElementById("stocks").style.visibility = "hidden";
+                            document.getElementById("calendar").style.visibility = "hidden";
+                            artyom.say("see you later");
+
+                        }
+                    },
+
+
+                    {
+                        description: "wake up",
+                        indexes: ["wake up", "open", "turn on"],
+                        action: function() {
+                            document.getElementById("time").style.visibility = "visible";
+                            document.getElementById("clock").style.visibility = "visible";
+                            document.getElementById("news").style.visibility = "hidden";
+                            document.getElementById("weather").style.visibility = "hidden";
+                            document.getElementById("stocks").style.visibility = "hidden";
+                            document.getElementById("calendar").style.visibility = "hidden"
+                            artyom.say("welcome back");
+                            document.getElementById('time').innerHTML = "Welcome Back";
+
+                        }
+                    },
+
+                    {
+                        description: "Get Weather",
+                        indexes: ["What is the weather like", "get weather", "show weather"],
+                        action: function() {
+                            document.getElementById("time").style.visibility = "hidden";
+                            document.getElementById("weather").style.visibility = "visible";
+                        }
+                    },
+
+
+                    {
+                        description: "Hide Weather",
+                        indexes: ["hide weather", "close weather"],
+                        action: function() {
+                            document.getElementById("weather").style.visibility = "hidden";
+                            document.getElementById("clock").style.visibility = "visible";
+                        }
+                    }, {
+                        description: "Show Stocks",
+                        indexes: ["how is the economy", "economy"],
+                        action: function() {
+                            document.getElementById("time").style.visibility = "hidden";
+                            document.getElementById('time').innerHTML = "";
+                            document.getElementById("stocks").style.visibility = "visible";
+
+                        }
+                    },
+
+
+
+                    {
+                        description: "Hide Stocks",
+                        indexes: ["hide economy"],
+                        action: function() {
+                            document.getElementById("stocks").style.visibility = "hidden";
+
+                        }
+                    },
+
+
+                    {
+                        description: "Open Calendar",
+                        indexes: ["show calendar", "calendar"],
+                        action: function() {
+                            document.getElementById("stocks").style.visibility = "hidden";
+                            document.getElementById("time").style.visibility = "hidden";
+                            document.getElementById("calendar").style.visibility = "visible";
+                        }
+                    },
+
+
+                    {
+                        description: "Close Calendar",
+                        indexes: ["hide calendar", "close calendar", "tide calendar"],
+                        action: function() {
+                            document.getElementById("calendar").style.visibility = "hidden";
+                        }
+                    },
+
+                    {
+                        description: "Open news",
+                        indexes: ["show me the news", "what is happening", "whats happening", "show news", "open news"],
+                        action: function() {
+                            document.getElementById("time").style.visibility = "hidden";
+                            document.getElementById("news").style.visibility = "visible";
+                        }
+                    },
+
+
+                    {
+                        description: "Close News",
+                        indexes: ["hide news", "close news", "clothes news"],
+                        action: function() {
+                            document.getElementById("news").style.visibility = "hidden";
+                        }
+                    },
+
+                    {
+                        description: "Say what time is it",
+                        indexes: ['what time is it'],
+                        action: function() {
+                            var currentdate = new Date();
+                            var datetime = "" + currentdate.getDate() + "/" + (currentdate.getMonth() + 1) + "/" + currentdate.getFullYear() + " @ " + currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+                            document.getElementById('time').innerHTML = datetime;
+                        }
+                    },
+
+                ]);
+
+                var commandPlay = {
+                    indexes: ["play my fav song", "play my favorite song", "play music"], // These spoken words will trigger the execution of the command
+                    action: function() { // Action to be executed when a index match with spoken word
+                        playSound()
+                        artyom.say("playing music")
+
+
+
+
+                    }
+                }
+                artyom.addCommands(commandPlay); // Add the command with addCommands method. Now
+
+
+                var audio = document.createElement('audio');
+                audio.style.display = "none";
+                audio.src = "01 - Saint Cecilia.mp3";
+
+
+
+                function playSound() {
+                    audio.play();
+                    audio.onended = function() {
+                        audio.pause() //Remove when played.
+                    };
+                    //document.body.appendChild(audio);
+                }
+
+
+
+                var commandStop = {
+                    indexes: ["stop music", "stop song"], // These spoken words will trigger the execution of the command
+                    action: function() { // Action to be executed when a index match with spoken word
+                        stopSound()
+                        artyom.say("stopinging music")
+
+
+
+
+                    }
+                }
+                artyom.addCommands(commandStop); // Add the command with addCommands method. Now
+
+
+                function stopSound() {
+                    audio.pause();
+
+
+
+
+                }
+
+
+
+                // Redirect the recognized text
+                artyom.redirectRecognizedTextOutput(function(text, isFinal) {
+                    var span = document.getElementById('output');
+
+                    if (isFinal) {
+                        span.innerHTML = '';
+                    } else {
+                        span.innerHTML = text;
+                    }
+                });
+                startArtyom()
+
+                function startArtyom() {
+                    artyom.initialize({
+                        lang: "en-US", // More languages are documented in the library
+                        continuous: true, //if you have https connection, you can activate continuous mode
+                        debug: true, //Show everything in the console
+                        listen: true // Start listening when this function is triggered
+                    });
+                }
+
+
+
+                window.onload = function() {
+                    var tab = document.getElementById("commands-list");
+                    var commands = artyom.getAvailableCommands();
+                    var html = '';
+
+                    for (var i = 0; i < commands.length; i++) {
+                        var command = commands[i];
+                        html += command.description + " : <span style='color:blue;'>" + command.indexes.toString() + "</span><br>";
+                    }
+
+                    tab.innerHTML = html;
+                };
+            </script>
+</body>
+
+</html>
